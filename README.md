@@ -1,2 +1,2 @@
 # Dreeco
-Dreeco's Android Application Prototyp
+Dreeco's Android Application Prototype

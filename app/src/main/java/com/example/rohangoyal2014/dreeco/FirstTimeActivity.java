@@ -18,12 +18,17 @@ import com.example.rohangoyal2014.dreeco.views.LoginView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import dmax.dialog.SpotsDialog;
+
 public class FirstTimeActivity extends AppCompatActivity implements LoginView,View.OnClickListener{
 
     LoginPresenter loginPresenter;
+
     Button loginButton;
     TextView forgotPasswordView,notAMemberView;
     EditText emailView,passwordView;
+
+    SpotsDialog progressDialog;
 
 
     @Override
@@ -41,6 +46,9 @@ public class FirstTimeActivity extends AppCompatActivity implements LoginView,Vi
         emailView=findViewById(R.id.mail_view);
         passwordView=findViewById(R.id.password_view);
 
+        progressDialog=new SpotsDialog(this);
+        progressDialog.setCancelable(false);
+
         loginButton.setOnClickListener(this);
         forgotPasswordView.setOnClickListener(this);
         notAMemberView.setOnClickListener(this);
@@ -56,19 +64,22 @@ public class FirstTimeActivity extends AppCompatActivity implements LoginView,Vi
 
     @Override
     public void loginSuccess(FirebaseUser user) {
+        progressDialog.dismiss();
         updateUI(user);
         loginButton.setEnabled(true);
     }
 
     @Override
     public void loginFailed() {
+        progressDialog.dismiss();
         loginButton.setEnabled(true);
         Toast.makeText(this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
         updateUI(null);
     }
 
     @Override
-    public void dataValidationFailed(int code) {
+    public void dataValidationFailed() {
+        progressDialog.dismiss();
         loginButton.setEnabled(true);
         Toast.makeText(this, getString(R.string.empty_fields), Toast.LENGTH_SHORT).show();
     }
@@ -85,6 +96,7 @@ public class FirstTimeActivity extends AppCompatActivity implements LoginView,Vi
         int id=v.getId();
         switch (id){
             case R.id.login_button:
+                progressDialog.show();
                 loginButton.setEnabled(false);
                 loginPresenter.performLogin(emailView.getText().toString(),passwordView.getText().toString());
                 break;

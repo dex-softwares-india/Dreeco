@@ -32,10 +32,10 @@ public class LoginModel implements LoginPresenter{
         email=email.trim();
         pass=pass.trim();
         if(TextUtils.isEmpty(email)){
-            mLoginView.dataValidationFailed(LoginView.EMAIL_EMPTY);
+            mLoginView.dataValidationFailed();
         }
         else if(TextUtils.isEmpty(pass)){
-            mLoginView.dataValidationFailed(LoginView.PASSWORD_EMPTY);
+            mLoginView.dataValidationFailed();
         } else{
             signInUser(email,pass);
         }

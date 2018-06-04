@@ -31,6 +31,7 @@
 
                                 <android.support.design.widget.TextInputEditText
                                     android:layout_width="match_parent"
+                                    android:id="@+id/first_name_view"
                                     android:layout_height="wrap_content"
                                     android:inputType="textPersonName" />
                         </android.support.design.widget.TextInputLayout>
@@ -42,6 +43,7 @@
 
                                 <android.support.design.widget.TextInputEditText
                                     android:layout_width="match_parent"
+                                    android:id="@+id/last_name_view"
                                     android:layout_height="wrap_content"
                                     android:inputType="textPersonName" />
                         </android.support.design.widget.TextInputLayout>
@@ -53,6 +55,7 @@
 
                                 <android.support.design.widget.TextInputEditText
                                     android:layout_width="match_parent"
+                                    android:id="@+id/email_view"
                                     android:layout_height="wrap_content"
                                     android:inputType="textEmailAddress" />
                         </android.support.design.widget.TextInputLayout>
@@ -64,6 +67,7 @@
 
                                 <android.support.design.widget.TextInputEditText
                                     android:layout_width="match_parent"
+                                    android:id="@+id/phone_view"
                                     android:layout_height="wrap_content"
                                     android:inputType="phone" />
                         </android.support.design.widget.TextInputLayout>
@@ -71,21 +75,25 @@
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            app:passwordToggleEnabled="true"
                             android:hint="@string/password">
 
                                 <android.support.design.widget.TextInputEditText
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:inputType="textPassword" />
+                                    android:id="@+id/pass_view"
+                                    android:inputType="textPassword"
+                                    android:layout_height="wrap_content" />
                         </android.support.design.widget.TextInputLayout>
 
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            app:passwordToggleEnabled="true"
                             android:hint="@string/conf_password">
 
                                 <android.support.design.widget.TextInputEditText
                                     android:layout_width="match_parent"
+                                    android:id="@+id/conf_pass_view"
                                     android:layout_height="wrap_content"
                                     android:inputType="textPassword" />
                         </android.support.design.widget.TextInputLayout>
@@ -95,6 +103,7 @@
         </ScrollView>
 
         <android.support.design.widget.FloatingActionButton
+            android:id="@+id/register_btn"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginBottom="8dp"

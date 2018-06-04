@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Dreeco</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="forgot_pass">Forgot Password</string>
+    <string name="not_a_member">First Time User? Register</string>
+    <string name="register">Register</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone">Phone</string>
+    <string name="conf_password">Confirm Password</string>
+    <string name="empty_fields">Fields can not be empty</string>
+    <string name="login_failed">Login Failed!!</string>
+</resources>

@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "259957533512",
+    "firebase_url": "https://dreeco-19834.firebaseio.com",
+    "project_id": "dreeco-19834",
+    "storage_bucket": "dreeco-19834.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259957533512:android:bef174d557b229f1",
+        "android_client_info": {
+          "package_name": "com.example.rohangoyal2014.dreeco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259957533512-6ls4j4945n13ei47a4rgef6bsq3adgpd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rohangoyal2014.dreeco",
+            "certificate_hash": "78bd4d4d76a9a84a37f7ac378618c4aecb82fba4"
+          }
+        },
+        {
+          "client_id": "259957533512-m43048jb0n42e2i007sifvd2n9406fgm.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "259957533512-m43048jb0n42e2i007sifvd2n9406fgm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9h9NOxJipVtx_e_1muur_JwwUOZMsPpM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259957533512-m43048jb0n42e2i007sifvd2n9406fgm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

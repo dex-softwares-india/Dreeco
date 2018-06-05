@@ -1,13 +1,10 @@
-package com.example.rohangoyal2014.dreeco;
+package com.example.rohangoyal2014.dreeco.controllers;
 
 import android.content.Intent;
-import android.os.Handler;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,9 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.example.rohangoyal2014.dreeco.R;
 import com.example.rohangoyal2014.dreeco.models.LoginModel;
 import com.example.rohangoyal2014.dreeco.presenters.LoginPresenter;
-import com.example.rohangoyal2014.dreeco.utils.FirebaseUserDataModel;
 import com.example.rohangoyal2014.dreeco.utils.ServerUtils;
 import com.example.rohangoyal2014.dreeco.views.LoginView;
 import com.google.firebase.auth.FirebaseAuth;

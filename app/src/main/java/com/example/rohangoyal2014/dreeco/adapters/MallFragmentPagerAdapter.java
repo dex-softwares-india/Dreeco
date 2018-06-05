@@ -1,16 +1,13 @@
-package com.example.rohangoyal2014.dreeco.utils;
+package com.example.rohangoyal2014.dreeco.adapters;
 
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.rohangoyal2014.dreeco.HomeFragment;
-import com.example.rohangoyal2014.dreeco.NearbyFragment;
-import com.example.rohangoyal2014.dreeco.ProfileFragment;
-import com.example.rohangoyal2014.dreeco.R;
-
-import java.util.ArrayList;
+import com.example.rohangoyal2014.dreeco.controllers.HomeFragment;
+import com.example.rohangoyal2014.dreeco.controllers.NearbyFragment;
+import com.example.rohangoyal2014.dreeco.controllers.ProfileFragment;
 
 public class MallFragmentPagerAdapter extends FragmentPagerAdapter{
 

@@ -1,0 +1,3 @@
+models are implementing presenters
+-LoginModel implements LoginPresenter
+-RegisterModel implements RegisterPresenter

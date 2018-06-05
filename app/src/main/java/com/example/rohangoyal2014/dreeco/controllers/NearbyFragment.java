@@ -1,4 +1,4 @@
-package com.example.rohangoyal2014.dreeco;
+package com.example.rohangoyal2014.dreeco.controllers;
 
 
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.rohangoyal2014.dreeco.R;
 
 
 /**

@@ -1,19 +1,18 @@
-package com.example.rohangoyal2014.dreeco;
+package com.example.rohangoyal2014.dreeco.controllers;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.example.rohangoyal2014.dreeco.R;
 import com.example.rohangoyal2014.dreeco.models.RegisterModel;
 import com.example.rohangoyal2014.dreeco.presenters.RegisterPresenter;
 import com.example.rohangoyal2014.dreeco.utils.FirebaseUserDataModel;
-import com.example.rohangoyal2014.dreeco.views.LoginView;
 import com.example.rohangoyal2014.dreeco.views.RegisterView;
 
 public class RegisterActivity extends AppCompatActivity implements RegisterView{

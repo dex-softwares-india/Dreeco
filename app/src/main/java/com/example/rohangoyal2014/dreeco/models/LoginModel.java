@@ -1,20 +1,16 @@
 package com.example.rohangoyal2014.dreeco.models;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.example.rohangoyal2014.dreeco.FirstTimeActivity;
-import com.example.rohangoyal2014.dreeco.R;
+import com.example.rohangoyal2014.dreeco.controllers.FirstTimeActivity;
 import com.example.rohangoyal2014.dreeco.presenters.LoginPresenter;
 import com.example.rohangoyal2014.dreeco.utils.ServerUtils;
 import com.example.rohangoyal2014.dreeco.views.LoginView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginModel implements LoginPresenter{

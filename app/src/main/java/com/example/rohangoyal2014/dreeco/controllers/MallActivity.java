@@ -1,7 +1,6 @@
-package com.example.rohangoyal2014.dreeco;
+package com.example.rohangoyal2014.dreeco.controllers;
 
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +8,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
-import com.example.rohangoyal2014.dreeco.utils.MallFragmentPagerAdapter;
+import com.example.rohangoyal2014.dreeco.R;
+import com.example.rohangoyal2014.dreeco.adapters.MallFragmentPagerAdapter;
 
 public class MallActivity extends AppCompatActivity {
 

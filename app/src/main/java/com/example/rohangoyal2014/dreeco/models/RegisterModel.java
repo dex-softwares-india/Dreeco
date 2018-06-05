@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.example.rohangoyal2014.dreeco.RegisterActivity;
+import com.example.rohangoyal2014.dreeco.controllers.RegisterActivity;
 import com.example.rohangoyal2014.dreeco.presenters.RegisterPresenter;
 import com.example.rohangoyal2014.dreeco.utils.FirebaseUserDataModel;
 import com.example.rohangoyal2014.dreeco.utils.ServerUtils;
@@ -13,11 +13,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class RegisterModel implements RegisterPresenter {
 

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FirstTimeActivity"
+            android:name=".controllers.FirstTimeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
@@ -22,10 +22,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterActivity"
-            android:parentActivityName=".FirstTimeActivity"
+            android:name=".controllers.RegisterActivity"
+            android:parentActivityName=".controllers.FirstTimeActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".MallActivity"
+        <activity android:name=".controllers.MallActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme"></activity>
     </application>

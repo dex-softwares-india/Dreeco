@@ -9,20 +9,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.rohangoyal2014.dreeco.models.RegisterModel;
 import com.example.rohangoyal2014.dreeco.presenters.RegisterPresenter;
 import com.example.rohangoyal2014.dreeco.utils.FirebaseUserDataModel;
 import com.example.rohangoyal2014.dreeco.views.LoginView;
 import com.example.rohangoyal2014.dreeco.views.RegisterView;
 
-import dmax.dialog.SpotsDialog;
-
 public class RegisterActivity extends AppCompatActivity implements RegisterView{
 
     TextInputEditText firstNameView,lastNameView,emailView,phoneView,passwordView,confirmPasswordView;
     FloatingActionButton registerButton;
 
-    SpotsDialog progressDialog;
+    MaterialDialog progressDialog;
 
     RegisterPresenter registerPresenter;
 
@@ -43,7 +42,10 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView{
 
         registerButton=findViewById(R.id.register_btn);
 
-        progressDialog=new SpotsDialog(this);
+        progressDialog=new MaterialDialog.Builder(this)
+                .title(R.string.loading)
+                .content(R.string.wait)
+                .progress(true, 0).build();
         progressDialog.setCancelable(false);
 
         registerPresenter=new RegisterModel(this,this);

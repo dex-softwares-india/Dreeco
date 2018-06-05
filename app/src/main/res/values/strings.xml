@@ -19,4 +19,15 @@
     <string name="password_length_constraint">Password must be at least 8 characters long</string>
     <string name="password_match_constraint">Both Passwords need to match</string>
     <string name="phone_constraint">Phone Number Incorrect!</string>
+    <string name="something_wrong">Something went wrong</string>
+    <string name="loading">Loading</string>
+    <string name="wait">Please Wait</string>
+    <string name="check_mail">Please check your email</string>
+    <string name="profile">Profile</string>
+    <string name="nearby">Nearby</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

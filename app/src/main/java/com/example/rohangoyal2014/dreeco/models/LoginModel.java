@@ -41,6 +41,27 @@ public class LoginModel implements LoginPresenter{
         }
     }
 
+    @Override
+    public void forgotPassword(String email) {
+
+        email=email.trim();
+        if(TextUtils.isEmpty(email)){
+            mLoginView.forgotPasswordEmailTextEmpty();
+            return;
+        }
+        ServerUtils.mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+                if(task.isSuccessful()){
+                    mLoginView.forgotPasswordEmailSendingSuccess();
+                } else {
+                    mLoginView.forgotPasswordEmailSendingFailed();
+                }
+            }
+        });
+    }
+
     private void signInUser(String email,String pass){
         ServerUtils.mAuth.signInWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(firstTimeActivity, new OnCompleteListener<AuthResult>() {

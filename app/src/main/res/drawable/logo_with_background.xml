@@ -6,10 +6,6 @@
         </shape>
     </item>
     <item
-        android:drawable="@drawable/dreeco"
-        android:bottom="250dp"
-        android:left="50dp"
-        android:right="50dp"
-        android:top="250dp">
+        android:drawable="@drawable/dreeco">
     </item>
 </layer-list>

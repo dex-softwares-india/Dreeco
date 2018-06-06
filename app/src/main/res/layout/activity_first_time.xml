@@ -10,9 +10,6 @@
     tools:context=".controllers.FirstTimeActivity">
 
     <ImageView
-        android:paddingLeft="20dp"
-        android:paddingTop="70dp"
-        android:paddingRight="90dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

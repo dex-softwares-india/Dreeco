@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.rohangoyal2014.dreeco.controllers.HomeFragment;
+import com.example.rohangoyal2014.dreeco.controllers.MallActivity;
 import com.example.rohangoyal2014.dreeco.controllers.NearbyFragment;
 import com.example.rohangoyal2014.dreeco.controllers.ProfileFragment;
 

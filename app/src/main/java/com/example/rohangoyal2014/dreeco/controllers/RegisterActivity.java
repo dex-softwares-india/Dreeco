@@ -13,6 +13,7 @@ import com.example.rohangoyal2014.dreeco.R;
 import com.example.rohangoyal2014.dreeco.models.RegisterModel;
 import com.example.rohangoyal2014.dreeco.presenters.RegisterPresenter;
 import com.example.rohangoyal2014.dreeco.utils.FirebaseUserDataModel;
+import com.example.rohangoyal2014.dreeco.utils.ServerUtils;
 import com.example.rohangoyal2014.dreeco.views.RegisterView;
 
 public class RegisterActivity extends AppCompatActivity implements RegisterView{
@@ -75,6 +76,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView{
         registerButton.setEnabled(true);
         startActivity(new Intent(this,RegisterActivity.class));
         finish();
+        ServerUtils.mAuth.signOut();
         Toast.makeText(this, getString(R.string.register_success), Toast.LENGTH_SHORT).show();
     }
 

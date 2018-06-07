@@ -1,30 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:id="@+id/drawer"
+    app:contentScaleClosed="1.0"
+    app:contentScaleOpen="0.7"
+    app:menuScaleClosed="1.1"
+    app:menuScaleOpen="1.0"
+    app:clickToCloseScale="0.7"
+    app:menuAlphaClosed="0.0"
+    app:menuAlphaOpen="1.0"
+    app:marginFactor="0.7"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <FrameLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:tag="@string/tag_menu">
+
+        <include
+            android:id="@+id/logged_in_drawer_layout"
+            android:visibility="gone"
+            layout="@layout/layout_logged_in"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <include
+            android:id="@+id/logged_out_drawer_layout"
+            layout="@layout/layout_logged_out"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </FrameLayout>
+
+<LinearLayout
+    android:tag="@string/tag_content"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView
-        app:cardCornerRadius="0dp"
-        app:cardElevation="6dp"
-        android:id="@+id/toolbar_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             app:title="@string/app_name"
-            app:titleTextColor="@color/icons"
             android:layout_width="match_parent"
+            android:theme="@style/ToolbarTheme"
             android:layout_height="?android:attr/actionBarSize"
             android:background="@color/colorPrimaryDark" />
-
-        <com.miguelcatalan.materialsearchview.MaterialSearchView
-            android:id="@+id/search_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </android.support.v7.widget.CardView>
 
 
     <com.example.rohangoyal2014.dreeco.utils.NonSwipeableViewPager
@@ -50,3 +76,4 @@
     </android.support.v7.widget.CardView>
 
 </LinearLayout>
+</nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout>

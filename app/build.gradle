@@ -21,6 +21,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'nl.psdcompany:duo-navigation-drawer:2.0.8'
+    implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     implementation 'com.android.support:design:27.1.1'

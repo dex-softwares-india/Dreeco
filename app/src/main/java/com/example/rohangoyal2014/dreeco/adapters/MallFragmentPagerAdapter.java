@@ -6,9 +6,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.rohangoyal2014.dreeco.controllers.HomeFragment;
-import com.example.rohangoyal2014.dreeco.controllers.MallActivity;
-import com.example.rohangoyal2014.dreeco.controllers.NearbyFragment;
-import com.example.rohangoyal2014.dreeco.controllers.ProfileFragment;
 
 public class MallFragmentPagerAdapter extends FragmentPagerAdapter{
 
@@ -27,15 +24,28 @@ public class MallFragmentPagerAdapter extends FragmentPagerAdapter{
                 return new HomeFragment();
             case 1:
                 //bottomNavigationView.setSelectedItemId(R.id.nearby);
-                return new NearbyFragment();
+                //return new NearbyFragment();
+                return new HomeFragment();
+            case 2:
+                //bottomNavigationView.setSelectedItemId(R.id.nearby);
+                //return new NearbyFragment();
+                return new HomeFragment();
+            case 3:
+                //bottomNavigationView.setSelectedItemId(R.id.nearby);
+                //return new NearbyFragment();
+                return new HomeFragment();
+            case 4:
+                //bottomNavigationView.setSelectedItemId(R.id.nearby);
+                //return new NearbyFragment();
+                return new HomeFragment();
             default:
                 //bottomNavigationView.setSelectedItemId(R.id.profile);
-                return new ProfileFragment();
+                return new HomeFragment();
         }
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 5;
     }
 }

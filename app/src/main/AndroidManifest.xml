@@ -23,11 +23,15 @@
         </activity>
         <activity
             android:name=".controllers.RegisterActivity"
-            android:parentActivityName=".controllers.FirstTimeActivity"
+            android:parentActivityName=".controllers.LoginActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".controllers.MallActivity"
+        <activity
+            android:name=".controllers.MallActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme"></activity>
+            android:theme="@style/NoActionBarTheme" />
+        <activity android:name=".controllers.LoginActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".controllers.MallActivity"></activity>
     </application>
 
 </manifest>

@@ -40,11 +40,11 @@ public class HomeFragment extends Fragment {
             public Fragment getItem(int position) {
                 switch (position){
                     case 0:
-                        return new ProfileFragment();
+                        return new HomeSliderFragment();
                     case 1:
                         return new HomeSliderFragment();
                     default:
-                        return new NearbyFragment();
+                        return new HomeSliderFragment();
 
                 }
             }

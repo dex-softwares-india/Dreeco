@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.example.rohangoyal2014.dreeco.controllers.FirstTimeActivity;
+import com.example.rohangoyal2014.dreeco.controllers.LoginActivity;
 import com.example.rohangoyal2014.dreeco.presenters.LoginPresenter;
 import com.example.rohangoyal2014.dreeco.utils.ServerUtils;
 import com.example.rohangoyal2014.dreeco.views.LoginView;
@@ -16,11 +17,11 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginModel implements LoginPresenter{
 
     LoginView mLoginView;
-    FirstTimeActivity firstTimeActivity;
+    LoginActivity loginActivity;
 
-    public LoginModel(FirstTimeActivity firstTimeActivity,LoginView mLoginView){
+    public LoginModel(LoginActivity loginActivity,LoginView mLoginView){
         this.mLoginView=mLoginView;
-        this.firstTimeActivity=firstTimeActivity;
+        this.loginActivity=loginActivity;
     }
 
     @Override
@@ -60,7 +61,7 @@ public class LoginModel implements LoginPresenter{
 
     private void signInUser(String email,String pass){
         ServerUtils.mAuth.signInWithEmailAndPassword(email, pass)
-                .addOnCompleteListener(firstTimeActivity, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(loginActivity, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {

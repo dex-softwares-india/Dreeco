@@ -2,7 +2,7 @@
     <string name="app_name">Dreeco</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="login">Login</string>
+    <string name="login">Sign In</string>
     <string name="forgot_pass">Forgot Password</string>
     <string name="not_a_member">First Time User? Register</string>
     <string name="register">Register</string>
@@ -27,7 +27,17 @@
     <string name="nearby">Nearby</string>
     <string name="home">Home</string>
     <string name="search">Search</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="map">Map</string>
+    <string name="add_new">Add New</string>
+    <string name="notifications">Notifications</string>
+    <string name="cart">Cart</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="name">Name</string>
+    <string name="my_orders">&#8226; My Orders</string>
+    <string name="payments">&#8226; Payments</string>
+    <string name="offers">&#8226; Offers/Coupons</string>
+    <string name="refer">&#8226; Invite a Friend</string>
+    <string name="rate_us">&#8226; Rate Us</string>
+    <string name="help">&#8226; Help and Support</string>
+    <string name="sign_out">Sign Out</string>
 </resources>

@@ -1,79 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout android:layout_width="match_parent"
+<nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    android:id="@+id/drawer"
+    app:clickToCloseScale="0.7"
     app:contentScaleClosed="1.0"
     app:contentScaleOpen="0.7"
-    app:menuScaleClosed="1.1"
-    app:menuScaleOpen="1.0"
-    app:clickToCloseScale="0.7"
+    app:marginFactor="0.7"
     app:menuAlphaClosed="0.0"
     app:menuAlphaOpen="1.0"
-    app:marginFactor="0.7"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    app:menuScaleClosed="1.1"
+    app:menuScaleOpen="1.0">
 
     <FrameLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:tag="@string/tag_menu">
 
         <include
             android:id="@+id/logged_in_drawer_layout"
-            android:visibility="gone"
             layout="@layout/layout_logged_in"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:visibility="gone" />
 
         <include
             android:id="@+id/logged_out_drawer_layout"
             layout="@layout/layout_logged_out"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
 
     </FrameLayout>
 
-<LinearLayout
-    android:tag="@string/tag_content"
-    android:orientation="vertical"
-    android:background="#FFFFFF"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:tag="@string/tag_content">
 
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            app:title="@string/app_name"
             android:layout_width="match_parent"
-            android:theme="@style/ToolbarTheme"
             android:layout_height="?android:attr/actionBarSize"
-            android:background="@color/colorPrimaryDark" />
+            android:background="@color/colorPrimaryDark"
+            android:theme="@style/ToolbarTheme"
+            app:title="@string/app_name" />
 
 
-    <com.example.rohangoyal2014.dreeco.utils.NonSwipeableViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        <com.example.rohangoyal2014.dreeco.utils.NonSwipeableViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-    <android.support.v7.widget.CardView
-        app:cardCornerRadius="0dp"
-        android:layout_width="match_parent"
-        app:cardElevation="25dp"
-        android:layout_height="wrap_content">
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@android:color/white"
-        app:itemIconTint="@color/color_bottom_nav"
-        app:itemTextColor="@color/color_bottom_nav"
-        app:menu="@menu/mall_bottom_navigation" />
-    </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="25dp">
 
-</LinearLayout>
+            <android.support.design.widget.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/white"
+                app:itemIconTint="@color/color_bottom_nav"
+                app:itemTextColor="@color/color_bottom_nav"
+                app:menu="@menu/mall_bottom_navigation" />
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
 </nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout>

@@ -21,9 +21,9 @@ public class RegisterModel implements RegisterPresenter {
     RegisterView mRegisterView;
     RegisterActivity registerActivity;
 
-    public RegisterModel(RegisterActivity registerActivity,RegisterView mRegisterView){
-        this.mRegisterView=mRegisterView;
-        this.registerActivity=registerActivity;
+    public RegisterModel(RegisterActivity registerActivity, RegisterView mRegisterView) {
+        this.mRegisterView = mRegisterView;
+        this.registerActivity = registerActivity;
     }
 
     @Override
@@ -32,39 +32,39 @@ public class RegisterModel implements RegisterPresenter {
         firebaseUserDataModel.setLastName(firebaseUserDataModel.getLastName().trim());
         firebaseUserDataModel.setEmail(firebaseUserDataModel.getEmail().trim());
         firebaseUserDataModel.setPhone(firebaseUserDataModel.getPhone().trim());
-        if(TextUtils.isEmpty(firebaseUserDataModel.getFirstName())){
+        if (TextUtils.isEmpty(firebaseUserDataModel.getFirstName())) {
 
             mRegisterView.validationError(RegisterView.FIRST_NAME_EMPTY);
 
-        } else if(TextUtils.isEmpty(firebaseUserDataModel.getLastName())){
+        } else if (TextUtils.isEmpty(firebaseUserDataModel.getLastName())) {
 
             mRegisterView.validationError(RegisterView.LAST_NAME_EMPTY);
 
-        } else if(TextUtils.isEmpty(firebaseUserDataModel.getEmail())){
+        } else if (TextUtils.isEmpty(firebaseUserDataModel.getEmail())) {
 
             mRegisterView.validationError(RegisterView.EMAIL_EMPTY);
 
-        } else if(TextUtils.isEmpty(firebaseUserDataModel.getPhone())){
+        } else if (TextUtils.isEmpty(firebaseUserDataModel.getPhone())) {
 
             mRegisterView.validationError(RegisterView.PHONE_EMPTY);
 
-        } else if(TextUtils.isEmpty(firebaseUserDataModel.getPassword())){
+        } else if (TextUtils.isEmpty(firebaseUserDataModel.getPassword())) {
 
             mRegisterView.validationError(RegisterView.PASSWORD_EMPTY);
 
-        } else if(TextUtils.isEmpty(firebaseUserDataModel.getConfirmedPassword())){
+        } else if (TextUtils.isEmpty(firebaseUserDataModel.getConfirmedPassword())) {
 
             mRegisterView.validationError(RegisterView.CONFIRM_PASSWORD_EMPTY);
 
-        } else if(firebaseUserDataModel.getPhone().length()!=10 || !checkForDigit(firebaseUserDataModel.getPhone())){
+        } else if (firebaseUserDataModel.getPhone().length() != 10 || !checkForDigit(firebaseUserDataModel.getPhone())) {
 
             mRegisterView.validationError(RegisterView.PHONE_NUMBER_INCORRECT);
 
-        } else if(firebaseUserDataModel.getPassword().length()<8){
+        } else if (firebaseUserDataModel.getPassword().length() < 8) {
 
             mRegisterView.validationError(RegisterView.PASSWORD_LENGTH_LESS);
 
-        } else if(!firebaseUserDataModel.getPassword().equals(firebaseUserDataModel.getConfirmedPassword())){
+        } else if (!firebaseUserDataModel.getPassword().equals(firebaseUserDataModel.getConfirmedPassword())) {
 
             mRegisterView.validationError(RegisterView.PASSWORD_NO_MATCH);
 
@@ -87,9 +87,9 @@ public class RegisterModel implements RegisterPresenter {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(getClass().getSimpleName(), "createUserWithEmail:failure", task.getException());
-                            if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                                 mRegisterView.userExists();
-                            } else{
+                            } else {
                                 mRegisterView.registrationFailed();
                             }
                         }
@@ -98,15 +98,15 @@ public class RegisterModel implements RegisterPresenter {
     }
 
     private void saveUserData(final FirebaseUserDataModel firebaseUserDataModel) {
-        DatabaseReference ref=FirebaseDatabase.getInstance().getReference();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
         ref.child(ServerUtils.USERS_ROUTE).push().setValue(firebaseUserDataModel).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    Log.d(getClass().getSimpleName(),"Write Successful");
+                if (task.isSuccessful()) {
+                    Log.d(getClass().getSimpleName(), "Write Successful");
                     mRegisterView.registrationSuccess();
                 } else {
-                    Log.d(getClass().getSimpleName(),"Write Unsuccessful");
+                    Log.d(getClass().getSimpleName(), "Write Unsuccessful");
                     mRegisterView.registrationFailed();
                 }
                 ServerUtils.mAuth.signOut();
@@ -114,11 +114,11 @@ public class RegisterModel implements RegisterPresenter {
         });
     }
 
-    private boolean checkForDigit(String phone){
-        for(int i=0;i<phone.length();++i){
-            if(phone.charAt(i)>='0' && phone.charAt(i)<='9'){
+    private boolean checkForDigit(String phone) {
+        for (int i = 0; i < phone.length(); ++i) {
+            if (phone.charAt(i) >= '0' && phone.charAt(i) <= '9') {
 
-            } else{
+            } else {
                 return false;
             }
         }

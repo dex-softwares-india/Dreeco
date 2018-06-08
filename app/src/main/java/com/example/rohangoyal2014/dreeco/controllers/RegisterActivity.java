@@ -1,10 +1,10 @@
 package com.example.rohangoyal2014.dreeco.controllers;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
@@ -16,9 +16,9 @@ import com.example.rohangoyal2014.dreeco.utils.FirebaseUserDataModel;
 import com.example.rohangoyal2014.dreeco.utils.ServerUtils;
 import com.example.rohangoyal2014.dreeco.views.RegisterView;
 
-public class RegisterActivity extends AppCompatActivity implements RegisterView{
+public class RegisterActivity extends AppCompatActivity implements RegisterView {
 
-    TextInputEditText firstNameView,lastNameView,emailView,phoneView,passwordView,confirmPasswordView;
+    TextInputEditText firstNameView, lastNameView, emailView, phoneView, passwordView, confirmPasswordView;
     FloatingActionButton registerButton;
 
     MaterialDialog progressDialog;
@@ -33,22 +33,22 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView{
         getSupportActionBar().setTitle(getString(R.string.register));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        firstNameView=findViewById(R.id.first_name_view);
-        lastNameView=findViewById(R.id.last_name_view);
-        emailView=findViewById(R.id.email_view);
-        phoneView=findViewById(R.id.phone_view);
-        passwordView=findViewById(R.id.pass_view);
-        confirmPasswordView=findViewById(R.id.conf_pass_view);
+        firstNameView = findViewById(R.id.first_name_view);
+        lastNameView = findViewById(R.id.last_name_view);
+        emailView = findViewById(R.id.email_view);
+        phoneView = findViewById(R.id.phone_view);
+        passwordView = findViewById(R.id.pass_view);
+        confirmPasswordView = findViewById(R.id.conf_pass_view);
 
-        registerButton=findViewById(R.id.register_btn);
+        registerButton = findViewById(R.id.register_btn);
 
-        progressDialog=new MaterialDialog.Builder(this)
+        progressDialog = new MaterialDialog.Builder(this)
                 .title(R.string.loading)
                 .content(R.string.wait)
                 .progress(true, 0).build();
         progressDialog.setCancelable(false);
 
-        registerPresenter=new RegisterModel(this,this);
+        registerPresenter = new RegisterModel(this, this);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +74,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView{
 
         progressDialog.dismiss();
         registerButton.setEnabled(true);
-        startActivity(new Intent(this,RegisterActivity.class));
+        startActivity(new Intent(this, RegisterActivity.class));
         finish();
         ServerUtils.mAuth.signOut();
         Toast.makeText(this, getString(R.string.register_success), Toast.LENGTH_SHORT).show();
@@ -102,63 +102,63 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView{
 
         progressDialog.dismiss();
         registerButton.setEnabled(true);
-        String msg="";
+        String msg = "";
         //status=true denotes if the message is empty field message
-        boolean status=false;
+        boolean status = false;
 
         //The object on which the error is to be set
         TextInputEditText intendedObject;
 
-        switch (code){
+        switch (code) {
             case RegisterView.FIRST_NAME_EMPTY:
-                msg="First Name";
-                status=true;
-                intendedObject=firstNameView;
+                msg = "First Name";
+                status = true;
+                intendedObject = firstNameView;
                 break;
             case RegisterView.LAST_NAME_EMPTY:
-                msg="Last Name";
-                status=true;
-                intendedObject=lastNameView;
+                msg = "Last Name";
+                status = true;
+                intendedObject = lastNameView;
                 break;
             case RegisterView.EMAIL_EMPTY:
-                msg="Email";
-                intendedObject=emailView;
-                status=true;
+                msg = "Email";
+                intendedObject = emailView;
+                status = true;
                 break;
             case RegisterView.PHONE_EMPTY:
-                msg="Phone";
-                intendedObject=phoneView;
-                status=true;
+                msg = "Phone";
+                intendedObject = phoneView;
+                status = true;
                 break;
             case RegisterView.PASSWORD_EMPTY:
-                msg="Password";
-                intendedObject=passwordView;
-                status=true;
+                msg = "Password";
+                intendedObject = passwordView;
+                status = true;
                 break;
             case RegisterView.CONFIRM_PASSWORD_EMPTY:
-                msg="Confirm Password";
-                intendedObject=confirmPasswordView;
-                status=true;
+                msg = "Confirm Password";
+                intendedObject = confirmPasswordView;
+                status = true;
                 break;
             case RegisterView.PASSWORD_LENGTH_LESS:
-                intendedObject=passwordView;
-                msg=getString(R.string.password_length_constraint);
+                intendedObject = passwordView;
+                msg = getString(R.string.password_length_constraint);
                 break;
             case RegisterView.PASSWORD_NO_MATCH:
-                intendedObject=confirmPasswordView;
-                msg=getString(R.string.password_match_constraint);
+                intendedObject = confirmPasswordView;
+                msg = getString(R.string.password_match_constraint);
                 break;
             case RegisterView.PHONE_NUMBER_INCORRECT:
-                intendedObject=phoneView;
-                msg=getString(R.string.phone_constraint);
+                intendedObject = phoneView;
+                msg = getString(R.string.phone_constraint);
                 break;
             default:
-                msg="Error!";
-                intendedObject=emailView;
+                msg = "Error!";
+                intendedObject = emailView;
 
         }
 
-        if(status) {
+        if (status) {
             msg += " " + getString(R.string.can_not_be_empty);
         }
 

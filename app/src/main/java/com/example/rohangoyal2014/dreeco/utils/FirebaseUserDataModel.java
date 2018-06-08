@@ -16,10 +16,6 @@ public class FirebaseUserDataModel {
         this.email = email;
     }
 
-    public String getConfirmedPassword() {
-        return confirmedPassword;
-    }
-
     public FirebaseUserDataModel(String firstName, String lastName, String phone, String email, String password, String confirmedPassword) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,6 +25,9 @@ public class FirebaseUserDataModel {
         this.confirmedPassword = confirmedPassword;
     }
 
+    public String getConfirmedPassword() {
+        return confirmedPassword;
+    }
 
     public String getFirstName() {
         return firstName;

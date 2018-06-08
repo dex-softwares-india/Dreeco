@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.example.rohangoyal2014.dreeco.controllers.FirstTimeActivity;
 import com.example.rohangoyal2014.dreeco.controllers.LoginActivity;
 import com.example.rohangoyal2014.dreeco.presenters.LoginPresenter;
 import com.example.rohangoyal2014.dreeco.utils.ServerUtils;
@@ -14,35 +13,34 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginModel implements LoginPresenter{
+public class LoginModel implements LoginPresenter {
 
     LoginView mLoginView;
     LoginActivity loginActivity;
 
-    public LoginModel(LoginActivity loginActivity,LoginView mLoginView){
-        this.mLoginView=mLoginView;
-        this.loginActivity=loginActivity;
+    public LoginModel(LoginActivity loginActivity, LoginView mLoginView) {
+        this.mLoginView = mLoginView;
+        this.loginActivity = loginActivity;
     }
 
     @Override
     public void performLogin(String email, String pass) {
-        email=email.trim();
-        pass=pass.trim();
-        if(TextUtils.isEmpty(email)){
+        email = email.trim();
+        pass = pass.trim();
+        if (TextUtils.isEmpty(email)) {
             mLoginView.dataValidationFailed();
-        }
-        else if(TextUtils.isEmpty(pass)){
+        } else if (TextUtils.isEmpty(pass)) {
             mLoginView.dataValidationFailed();
-        } else{
-            signInUser(email,pass);
+        } else {
+            signInUser(email, pass);
         }
     }
 
     @Override
     public void forgotPassword(String email) {
 
-        email=email.trim();
-        if(TextUtils.isEmpty(email)){
+        email = email.trim();
+        if (TextUtils.isEmpty(email)) {
             mLoginView.forgotPasswordEmailTextEmpty();
             return;
         }
@@ -50,7 +48,7 @@ public class LoginModel implements LoginPresenter{
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     mLoginView.forgotPasswordEmailSendingSuccess();
                 } else {
                     mLoginView.forgotPasswordEmailSendingFailed();
@@ -59,7 +57,7 @@ public class LoginModel implements LoginPresenter{
         });
     }
 
-    private void signInUser(String email,String pass){
+    private void signInUser(String email, String pass) {
         ServerUtils.mAuth.signInWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(loginActivity, new OnCompleteListener<AuthResult>() {
                     @Override

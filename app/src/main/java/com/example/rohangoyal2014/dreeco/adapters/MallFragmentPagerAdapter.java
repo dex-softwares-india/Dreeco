@@ -20,26 +20,16 @@ public class MallFragmentPagerAdapter extends FragmentPagerAdapter{
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                //bottomNavigationView.setSelectedItemId(R.id.home);
                 return new HomeFragment();
             case 1:
-                //bottomNavigationView.setSelectedItemId(R.id.nearby);
-                //return new NearbyFragment();
                 return new HomeFragment();
             case 2:
-                //bottomNavigationView.setSelectedItemId(R.id.nearby);
-                //return new NearbyFragment();
                 return new HomeFragment();
             case 3:
-                //bottomNavigationView.setSelectedItemId(R.id.nearby);
-                //return new NearbyFragment();
                 return new HomeFragment();
             case 4:
-                //bottomNavigationView.setSelectedItemId(R.id.nearby);
-                //return new NearbyFragment();
                 return new HomeFragment();
             default:
-                //bottomNavigationView.setSelectedItemId(R.id.profile);
                 return new HomeFragment();
         }
     }

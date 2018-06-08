@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:id="@+id/coordinator_layout"
     tools:context=".controllers.FirstTimeActivity">
 
 
     <LinearLayout
         android:layout_width="170dp"
         android:layout_height="170dp"
-        android:padding="1dp"
+        android:layout_gravity="center"
         android:background="@color/icons"
-        android:layout_gravity="center">
+        android:padding="1dp">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:background="@color/colorPrimary"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
 
-    <ImageView
-        android:layout_gravity="center"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:src="@drawable/dreeco"/>
+            <ImageView
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dreeco" />
         </FrameLayout>
 
     </LinearLayout>

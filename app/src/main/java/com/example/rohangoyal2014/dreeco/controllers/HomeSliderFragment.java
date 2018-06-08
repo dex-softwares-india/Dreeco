@@ -23,7 +23,7 @@ public class HomeSliderFragment extends Fragment {
     }
 
 
-    public void setImageResource(String resource){
+    public void setImageResource(String resource) {
 
     }
 
@@ -31,9 +31,9 @@ public class HomeSliderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_home_slider, container, false);
+        View view = inflater.inflate(R.layout.fragment_home_slider, container, false);
 
-        imageView=view.findViewById(R.id.slider_image);
+        imageView = view.findViewById(R.id.slider_image);
 
         return view;
     }

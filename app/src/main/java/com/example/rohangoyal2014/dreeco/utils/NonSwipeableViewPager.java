@@ -1,7 +1,6 @@
 package com.example.rohangoyal2014.dreeco.utils;
 
 
-
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;

@@ -2,18 +2,14 @@ package com.example.rohangoyal2014.dreeco.controllers;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.rohangoyal2014.dreeco.R;
-import com.example.rohangoyal2014.dreeco.adapters.MallFragmentPagerAdapter;
 
 import me.relex.circleindicator.CircleIndicator;
 
@@ -31,14 +27,14 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.fragment_home, container, false);
+        View v = inflater.inflate(R.layout.fragment_home, container, false);
 
-        ViewPager viewPager=v.findViewById(R.id.vp);
-        CircleIndicator circleIndicator=v.findViewById(R.id.indicator);
+        ViewPager viewPager = v.findViewById(R.id.vp);
+        CircleIndicator circleIndicator = v.findViewById(R.id.indicator);
         viewPager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         return new HomeSliderFragment();
                     case 1:

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/lightGray"
     android:orientation="vertical"
-    tools:context=".controllers.HomeFragment">
+    tools:context=".controllers.HomeMainFragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"

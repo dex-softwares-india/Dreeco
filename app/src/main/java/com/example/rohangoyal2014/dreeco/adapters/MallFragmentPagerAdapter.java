@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.rohangoyal2014.dreeco.controllers.HomeFragment;
+import com.example.rohangoyal2014.dreeco.controllers.HomeMainFragment;
 
 public class MallFragmentPagerAdapter extends FragmentPagerAdapter{
 
@@ -20,7 +21,7 @@ public class MallFragmentPagerAdapter extends FragmentPagerAdapter{
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new HomeFragment();
+                return new HomeMainFragment();
             case 1:
                 return new HomeFragment();
             case 2:

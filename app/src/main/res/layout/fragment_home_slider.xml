@@ -10,7 +10,6 @@
         android:id="@+id/slider_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_suggestion"/>
+        android:scaleType="centerCrop" />
 
 </FrameLayout>

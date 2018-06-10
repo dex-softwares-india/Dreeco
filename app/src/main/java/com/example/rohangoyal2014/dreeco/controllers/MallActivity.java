@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -49,13 +48,13 @@ public class MallActivity extends AppCompatActivity implements View.OnClickListe
 
     public static final int ACTIVITY_RESULT_REQUEST_CODE = 1;
     public static final String result = "ACTIVITY_RESULT";
+    public static Location mLocation = null;
     ViewPager viewPager;
     BottomNavigationView bottomNavigationView;
     Toolbar toolbar;
     Button signInButton;
     Button signoutButton;
     TextView drawerNameTV;
-    public static Location mLocation=null;
     View loggedInDrawerLayout, loggedOutDrawerLayout;
 
     private FusedLocationProviderClient mFusedLocationClient;
@@ -64,11 +63,13 @@ public class MallActivity extends AppCompatActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == ACTIVITY_RESULT_REQUEST_CODE) {
-            boolean state = data.getBooleanExtra(result, false);
-            Log.e("state", String.valueOf(state));
-            if (state) {
-                startActivity(new Intent(this, MallActivity.class));
-                finish();
+            if (data != null) {
+                boolean state = data.getBooleanExtra(result, false);
+                Log.e("state", String.valueOf(state));
+                if (state) {
+                    startActivity(new Intent(this, MallActivity.class));
+                    finish();
+                }
             }
         }
     }
@@ -93,8 +94,7 @@ public class MallActivity extends AppCompatActivity implements View.OnClickListe
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
 
-        new Thread()
-        {
+        new Thread() {
             @Override
             public void run() {
                 super.run();
@@ -174,7 +174,7 @@ public class MallActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void getLastLocation() throws SecurityException{
+    private void getLastLocation() throws SecurityException {
         mFusedLocationClient.getLastLocation()
                 .addOnSuccessListener(this, new OnSuccessListener<Location>() {
                     @Override
@@ -183,8 +183,8 @@ public class MallActivity extends AppCompatActivity implements View.OnClickListe
                         if (location != null) {
                             // Logic to handle location object
 //                            Log.e("Location",location.getLatitude()+" "+location.getLongitude());
-                            getAddress(location.getLatitude(),location.getLongitude());
-                            mLocation=location;
+                            getAddress(location.getLatitude(), location.getLongitude());
+                            mLocation = location;
                         }
                     }
                 });
@@ -194,12 +194,11 @@ public class MallActivity extends AppCompatActivity implements View.OnClickListe
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
         try {
             List<Address> addresses = geocoder.getFromLocation(lat, lng, 1);
-            if(addresses.isEmpty())
-            {
+            if (addresses.isEmpty()) {
                 return;
             }
             Address obj = addresses.get(0);
-            String address=obj.getSubLocality().concat(",").concat(obj.getLocality()).concat("(").concat(obj.getPostalCode()).concat(")");
+            String address = obj.getSubLocality().concat(",").concat(obj.getLocality()).concat("(").concat(obj.getPostalCode()).concat(")");
 
             toolbar.setTitle("Location");
             toolbar.setSubtitle(address);

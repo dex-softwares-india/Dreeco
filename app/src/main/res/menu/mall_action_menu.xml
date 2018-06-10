@@ -11,7 +11,7 @@
     <item
         android:id="@+id/subscriptions"
         android:enabled="true"
-        android:icon="@drawable/ic_bubble_chart_black_24dp"
+        android:icon="@drawable/ic_playlist_add_check_black_24dp"
         android:title="@string/subscriptions"
         app:showAsAction="ifRoom" />
 </menu>

@@ -1,4 +1,4 @@
-package com.example.rohangoyal2014.dreeco.models
+package com.example.rohangoyal2014.dreeco.utils
 
 
 /**

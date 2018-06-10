@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="md_dark_theme">false</item>
+        <item name="md_widget_color">@color/colorAccent</item>
     </style>
 
     <style name="NoActionBarTheme" parent="Theme.AppCompat.DayNight.NoActionBar">

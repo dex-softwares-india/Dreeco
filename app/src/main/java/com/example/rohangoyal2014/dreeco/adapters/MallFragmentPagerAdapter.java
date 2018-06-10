@@ -8,18 +8,18 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.example.rohangoyal2014.dreeco.controllers.HomeFragment;
 import com.example.rohangoyal2014.dreeco.controllers.HomeMainFragment;
 
-public class MallFragmentPagerAdapter extends FragmentPagerAdapter{
+public class MallFragmentPagerAdapter extends FragmentPagerAdapter {
 
     BottomNavigationView bottomNavigationView;
 
     public MallFragmentPagerAdapter(FragmentManager fm, BottomNavigationView bottomNavigationView) {
         super(fm);
-        this.bottomNavigationView=bottomNavigationView;
+        this.bottomNavigationView = bottomNavigationView;
     }
 
     @Override
     public Fragment getItem(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 return new HomeMainFragment();
             case 1:

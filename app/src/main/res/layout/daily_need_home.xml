@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/icons"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
+        android:background="@color/icons"
+        android:src="@drawable/fruits"
+        android:id="@+id/imageDailyListItem"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+    <TextView
+        android:id="@+id/daily_needs_type_title"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        app:srcCompat="@drawable/bread" />
+        android:textSize="12sp"
+        tools:text="@string/daily_needs"
+        android:gravity="center"/>
 </LinearLayout>

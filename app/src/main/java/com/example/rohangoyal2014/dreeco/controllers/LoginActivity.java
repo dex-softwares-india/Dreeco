@@ -53,6 +53,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
         forgotPasswordView.setOnClickListener(this);
         notAMemberView.setOnClickListener(this);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
@@ -133,4 +135,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
         }
     }
 
+    @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
+    }
 }
